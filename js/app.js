@@ -6,6 +6,10 @@ let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
   let addTxt = document.getElementById("addTxt");
   let addTitle = document.getElementById("addTitle");
+
+  // let var_name = document.getElementsByClassName("myValidation");
+
+
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObject = [];
@@ -26,6 +30,7 @@ addBtn.addEventListener("click", function (e) {
 
 //Function to show already existing notes in the localStorage
 function showNotes(element, index) {
+  // alert("Some message here");
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObject = [];
