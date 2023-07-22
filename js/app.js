@@ -8,22 +8,27 @@ addBtn.addEventListener("click", function (e) {
   let addTitle = document.getElementById("addTitle");
 
   // let var_name = document.getElementsByClassName("myValidation");
-
-
-  let notes = localStorage.getItem("notes");
-  if (notes == null) {
-    notesObject = [];
-  } else {
-    notesObject = JSON.parse(notes);
+  if(addTxt.value == "" && addTitle.value == ""){
+    alert("Add a Title or a Note first");
   }
-  let myObj = {
-    title: addTitle.value,
-    note: addTxt.value,
-  };
-  notesObject.push(myObj);
-  localStorage.setItem("notes", JSON.stringify(notesObject));
-  addTxt.value = "";
-  addTitle.value = "";
+  else{
+    
+      let notes = localStorage.getItem("notes");
+      if (notes == null) {
+        notesObject = [];
+      } else {
+        notesObject = JSON.parse(notes);
+      }
+      let myObj = {
+        title: addTitle.value,
+        note: addTxt.value,
+      };
+      notesObject.push(myObj);
+      localStorage.setItem("notes", JSON.stringify(notesObject));
+      addTxt.value = "";
+      addTitle.value = "";
+
+  }
   showNotes();
   // console.log(e);
 });
